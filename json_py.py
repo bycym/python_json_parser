@@ -4,7 +4,8 @@
 # Date : 2018.01.04.
 ######################################################################
 # https://stackoverflow.com/questions/28132055/not-able-to-display-multiple-json-keys-in-tkinter-gui
-
+# for search
+# https://stackoverflow.com/questions/17225920/python-tkinter-treeview-searchable
 
 import fnmatch
 import os
@@ -112,17 +113,15 @@ class App:
 
     def OnDoubleClick(self, event):
         selected_item = self._tree.focus()
-        #value = self._tree.item(selected_item, "values") # "values when"
         value = self._tree.item(selected_item, "values")
-        #print(value)
-        if (len(value) > 0):
-
-            string_line = str(value[1])
-            lineArray = string_line.split(",")
-            line = str(lineArray)
-            line = line.replace("'", " ")
-            line = line.strip()
-            to_clipboard = line[line.find("/home"):line.find(": ")]
+        key = self._tree.item(selected_item, "text")
+        if (value or key):
+            to_clipboard = str(key) + " : " + str(value[0])
+            # lineArray = string_line.split(",")
+            # line = str(lineArray)
+            # line = line.replace("'", " ")
+            # line = line.strip()
+            # to_clipboard = line[line.find("/home"):line.find(": ")]
             #print(to_clipboard)
             self.root.clipboard_clear()
             self.root.clipboard_append(to_clipboard.decode('utf-8'))

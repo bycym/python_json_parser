@@ -11,15 +11,22 @@ differences to convert:
 * undef -> 0
 
 {
-      'ansable_cnt' => 1,
-      'event' => {
-        'anonce' => 0,
-        'cases' => [
-          {
-            'allowprev' => 0,
-            'complaint' => undef,
-            'descr' => undef,
-            'diagnosis' => undef,
-          }
+  'ansable_cnt' => 1,
+  'ede' => {
+    'anonce' => 0,
+    'class' => [
+      {
+        'allow' => 0,
+        'complaint' => undef,
+        'descr' => 'feketebikapata',
+        'dino' => undef
+      },
+      {
+        'allow' => 0,
+        'complaint' => undef,
+        'descr' => undef,
+        'dino' => undef
       }
+    ]
+  }
 }
